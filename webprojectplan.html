@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<title>Web Project Plan</title>
+
+<!--metadati Dublin Core-->
+    <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"/>
+    <META NAME="DC.Title" CONTENT="Incendies Wiki"/>
+    <META NAME="DC.Creator" CONTENT="Simone Mamoli"/>
+    <META NAME="DC.Subject" CONTENT="Incendies"/>
+    <META NAME="DC.Description" CONTENT="Collezione di oggetti digitali riguardanti l'opera Incendies di Wajdi Mouawad"/>
+    <META NAME="DC.Publisher" CONTENT="GitHub"/>
+    <META NAME="DC.Date" CONTENT="2025/09/15"/>
+    <META NAME="DC.Type" CONTENT="Catalogo web"/>
+    <META NAME="DC.Format" CONTENT="Risorsa digitale"/>
+    <META NAME="DC.Language" CONTENT="it"/>
+    <META NAME="DC.Rights" CONTENT="Creative Commons"/>
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="shortcut icon" href="favicon/favicon.ico"/>
+
+<style>
+body {font-family: "Lato", sans-serif; font-size: 18px}
+h1 {font-family: "Lato", sans-serif; font-size: 40px}
+h2,h3,h4,h5,h6,h7 {font-family: "Lato", sans-serif; font-size: 30px}
+.w3-bar,button {font-family: "Montserrat", sans-serif}
+p {font-family: "Lato", sans-serif; font-size: 18px}
+
+ul#menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+  justify-content: space-evenly;
+  display: flex;
+}
+
+li.footer {
+  display:inline;
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+  justify-content: space-evenly;
+  font-size: 15px;
+}
+
+li.footer :hover {
+  background-color: #111111;
+}
+
+/* Style the list */
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #eee;
+  margin-top: 50px;
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+  color: #f44336;
+  text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+.search-container {
+  float: right;
+}
+
+/* Style the input field inside the navbar */
+ input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 16px;
+  border: none;
+}
+
+/* Style the button inside the input container */
+.search-container button {
+  float: right;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background: #ccc;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: right;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+</style>
+
+
+<body>
+
+  <div style="position: top; text-align: center; background-color: lightgrey;">
+    <img src="immagini/header5.jpg" style="width: 90%; height: 300px;">
+  </div>
+
+<!-- Navbar -->
+<div class="w3-top" style="position: sticky; top: 0;">
+  <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Home</a>
+    <a href="catalogo.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Catalogo completo</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Teatro</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Cinema</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Editoria</a>
+
+    <div class="search-container">
+    <form action="#">
+      <input type="text" placeholder="Cerca per parole chiave" name="search">
+      <button type="submit">Vai</button>
+    </form> 
+    </div>
+  </div>
+</div>
+
+
+<ul class="breadcrumb">
+  <li><a href="index.html">Home</a></li>
+  <li>Web Project Plan</li>
+</ul>
+
+<div class="testo" style="padding: 30px;">
+
+  <h1>Idea (Abstract)</h1>
+  <p>Il sito Incendies Wiki nasce per raccogliere, ordinare e rendere consultabili oggetti digitali di vario tipo legati all'opera Incendies di Wajdi Mouawad e alle sue rielaborazioni. Il catalogo generale sarà filtrabile e poi (nella versione definitiva) suddiviso in 3 categorie corrispondenti ai generi cui afferisce l'opera (teatro, cinema ed editoria) e sarà accessibile tramite vari canali di navigazione ed elementi di interazione.</p>
+
+
+  <h1>Brief</h1>
+
+  <h2>-Finalità e obiettivi del progetto</h2>
+  <p>L'obiettivo del progetto è di riunire oggetti digitali di diverse tipologie (foto, video, articoli...) e generi (teatro, cinema, letteratura...) al fine di permettere una più completa conoscenza dell'opera Incendies in tutte le sue sfaccettature e nella sua storia.</p>
+
+  <h2>-Pubblico di riferimento</h2>
+  <p>Il sito si rivolge a tutti gli appasionati dell'opera e/o del film, ma anche a chi vuole informarsi preventivamente su di essi; essendo questi talvolta trattati nelle università e (soprattutto all'estero) nelle scuole superiori, una potenziale maggioranza degli utenti potrebbe essere costituita da studenti o insegnanti interessati a un progetto sull'opera.</p>
+
+  <h2>-Media e accesso alla risorsa</h2>
+  <p>Il sito si basa principalmente su immagini e testi ma anche video ed audio; l'accesso è pensato principalmente per PC e non è ottimizzato per smartphone e tablet; sicuramente andrebbe adeguato a questi ultimi in una futura versione definitiva anche alla luce della potenziale utenza giovane.</p>
+
+  <h2>-Contenuti e Dati</h2>
+  <p>Per i contenuti si è cercato di usufruire prevalentemente di siti che permettono un libero riutilizzo (come Wikipedia), in ogni caso il sito non ha alcun fine commerciale e si è sempre cercato di dare credito e citare le fonti.</p>
+
+
+<h1>Benchmark</h1>
+<p>Nel corso dell'analisi dell'esistente non è stato trovato alcun sito con le stesse finalità né tantomeno simile nei contenuti. Esistono siti che trattano dell'opera, nessuno dei quali lo fa in maniera olistica ma piuttosto concentrandosi su un genere o un aspetto specifico; escludendo le numerose pagine web essenziali dedicate al film sui vari siti di streaming o di recensioni (ad es. Letterbox), ci sono solo un paio di siti che trattano dell'opera e dell'autore in maniera più estesa.</p>
+
+<h2>-Siti concorrenti</h2>
+  <p>Vanno brevemente menzionati il sito ufficiale dell'autore <a href="https://www.wajdimouawad.fr/">Wajdi Mouawad</a>, di cui si è tenuto conto per le note biografiche e alcuni elementi di colore e stile (ma che non tratta dell'opera), e il sito <a href="https://www.incendies-thefilm.com/">Incendies-TheFilm.com</a>, interessante anch'esso per l'utilizzo di colori e immagini ma che è solamente una collezione di recensioni al film in stile blog personale.</p>
+  <p>  Più interessante il sito <a href="https://incendies-theatre.jimdofree.com/">Enquête sur Incendies</a>, realizzato da studenti di un liceo in Francia come progetto scolastico. Questo sito è decisamente più completo e strutturato degli altri, con diverse sezioni e anche un project plan, e si rivolge specificamente allo studio dell'opera originale (ossia la pièce teatrale): di conseguenza esclude in gran parte la componente del cinema ed è basato quasi esclusivamente su testo; si configura dunque come una sorta di articolo di studio e approfondimento dell'opera e dell'autore in varie pagine web ma non come un catalogo digitale.</p>
+  <p>A livello più generale, per questo sito si è presa ispirazione anche da grandi pagine come Wikipedia per l'intento enciclopedico, <a href="https://minecraft.wiki/">Minecraft Wiki</a> per la compresenza di vari formati di risorse diversi fra loro e a siti di librerie o negozi online come Feltrinelli e Amazon per le pagine del catalogo e dell'item. 
+  </p>
+
+  <h1>Struttura</h1>
+
+  <h2>-Mappa concettuale</h2>
+  <img src="immagini/mappa.png">
+  <p>La mappa sintetizza i concetti fondamentali dell'opera da cui si è partiti per ragionare sul sito.</p>
+
+  <h2>-Schema delle dipendenze</h2> 
+  <img src="immagini/schema.png">
+  <p>Dalla homepage si può accedere tramite navbar al catalogo generale o ai tre cataloghi già filtrati per genere, oppure eseguire una ricerca specifica nell'apposito box; si può accedere direttamente a degli item tramite lo slideshow delle novità e al web project plan tramite footer; nel catalogo ci sono alcuni pulsanti per ordinare o filtrare gli items in base ad alcune categorie di metadati.</p>
+
+  <h2>-Categorie di descrizione degli item</h2>
+  <p>Il catalogo raccoglie elementi di generi diversi fra loro, dunque come categorie fondamentali comuni a tutti si sono scelti: titolo, genere, lingua, data di creazione (/pubblicazione) e data di aggiunta al catalogo del sito, che corrispondono ai buttons per ordinare e filtrare. In una versione definitiva del sito ciascun catalogo filtrato per genere avrebbe ulteriori categorie più specifiche, come si vede nella pagina dell'item di esempio che presenta le categorie tipiche dell'editoria (n. di pagine, editore, dimensioni ecc...). </p>
+
+
+  <h1>Layout</h1>
+
+  <h2>-Homepage</h2>
+
+  <img src="immagini/w-index.png" style="width: 80%; height: auto;">
+  <p>La homepage inizia con un header composto da immagine e titolo del sito e una navbar con bottoni per accedere alle varie sezioni del catalogo, oltre ad un box di ricerca per parole chiave; a seguire una breve sezione introduttiva e un altro bottone per accedere al catalogo generale, poi due fasce composte da testo e immagine a lato per introdurre l'opera e l'autore; segue una timeline interattiva e una sezione di slideshow da cui si può accedere direttamente a degli item appena aggiunti alla collezione; infine una sezione di testo con link per accedere a una pagina di iscrizione alla newsletter, delle icone social che in versione definitiva sarebbero dei link a eventuali profili e il footer con i crediti a w3.css e sotto le informazioni riguardo il creatore del sito, il copyright e il web project plan. L'header, la navbar e il footer sono uguali in tutte le altre pagine del sito.</p>
+
+  <h2>-Catalogo</h2>
+  <img src="immagini/w-catalogo.png" style="width: 80%; height: auto;">
+  <p>Oltre alle componenti già descritte, il catalogo presenta delle breadcrumbs per orientarsi nel sito; è poi composto principalmente da una galleria di cards cliccabili con immagini degli item, un box con pulsanti per ordinare la lista o filtrarla (il button finale per la lingua è un hover dropdown) e infine la pagination per sfogliare le pagine del catalogo.</p>
+ 
+ <h2>-Item</h2>
+  <img src="immagini/w-item.png" style="width: 80%; height: auto;">
+  <p>Oltre alle componenti già descritte, la pagina dell'item è composta da immagini dell'elemento affiancate da una tabella con le rispettive categorie di metadati Dublin Core, una fascia di testo con la descrizione dell'elemento ed eventuali approfondimenti e l'embedding di una mappa che nella versione definitiva servirebbe a trovare l'item nelle vicinanze, se reperibile (in questo caso di esempio i luoghi dove prendere in prestito il libro).</p>
+
+  <h1>Usabilità</h1>
+
+  <h2>-Architettura</h2>
+  <p>Nel corso della progettazione e costruzione del sito si è cercato di mantenere costanti fra le varie pagine gli elementi logici fondamentali: l'header come punto di riferimento evocativo del tema del sito, la navbar che permette di tornare alla home o di navigare nei cataloghi e cercare, e il footer con i crediti e le informazioni su creatore, data di aggiornamento del sito, bibliografia/sitografia, web project plan e copyright. Ci sono poi ulteriori elementi di orientamento e navigazione come le breadcrumbs e la pagination nel catalogo. In generale si è cercato di costruire le pagine con fasce orizzontali di contenuto che si susseguono e di mantenere una struttura logica chiara e intuitiva. </p>
+
+  <h2>-Aspetto e tipografia</h2>
+  <p>Nella scrittura si è cercato di limitare la lunghezza dei testi e di alternarli ad altri elementi grafici per non farli risultare eccessivamente pesanti alla vista, e di mantenere uno stile coerente ed essenziale che evidenzi l'importanza di parole, link o elementi tramite dimensioni o variazioni grafiche; si è tentato di dare feedback all'utente quando possibile, per esempio con effetti sull'hover ed evidenziando il canale di navigazione attuale.</p>
+
+  <h2>-Colori, font e icone</h2>
+  <p>Inizialmente ci si è appoggiati ad un template di w3.css, poi variamente integrato, per la sua chiarezza e coerenza con i temi del sito; si è cercato un compromesso fra usabilità ed estetica, cercando di evocare i temi dell'opera di riferimento nello stile. I colori evocativi delle tematiche sono il rosso e il nero, che nel sito vengono affiancati da grigio e bianco cercando di mantenere un buon contrasto. il font principale è Lato di google fonts e le icone sono essenzialmente quelle dei social media di Font Awesome riprese da w3.css. </p>
+
+  <h1>Servizi</h1>
+
+  <h2>-Strumenti di browsing</h2>
+  <p>Oltre ai bottoni nella navbar come principali strumenti di browsing, sono presenti nel sito: 
+    <ul>
+   <li>Una barra di ricerca per parole chiave nella navbar;</li> 
+   <li>Breadcrumbs nelle pagine diverse dalla home per facilitare l'orientamento dell'utente;</li>
+   <li>Pagination nel catalogo per sfogliarlo come una rivista;</li>
+   <li>Links nelle cards del catalogo e nelle didascalie dello slideshow nella homepage;</li>
+   <li>Navigazione filtrata/ordinata tramite buttons nel catalogo;</li></ul>
+  </p>
+
+  <h2>-Strumenti di interazione</h2>
+  <p>
+    <ul>
+   <li>Navbar sticky in modo che rimanga sempre visibile in alto;</li> 
+   <li>Buttons con effetti sull'hover per un buon feedback;</li>
+   <li>Cards responsive nella gallery del catalogo;</li>
+   <li>Dropdown nel filtro per lingua del catalogo;</li>
+   <li>Slideshow di immagini di items nella home per mettere in evidenza le ultime aggiunte al catalogo;</li> 
+   <li>Tabella per raccogliere le categorie descrittive dell'item;</li>
+   <li>Icons dei social media come bottoni e links;</li>
+   <li>Tooltips tramite attributo title nel footer, ad esempio per spiegare al momento dell'hover che il nome è quello del creatore;</li>
+ </ul>
+  </p>
+
+  <h2>-Strumenti integrativi</h2>
+  <p>Oltre agli elementi elencati sopra sono stati aggiunti una timeline nella homepage per aumentare l'interattività e rendere la pagina più accattivante, un embedding di un video youtube in una card del catalogo ed un embedding da google maps che nella versione definitiva dovrebbe essere utilizzabile per trovare luoghi di interesse correlati all'item nelle proprie vicinanze. </p>
+  <p>Sarebbe inoltre interessante, avendo in futuro un catalogo più ricco e completo, permettere all'utente di creare le proprie librerie personalizzate e interagire maggiormente con gli oggetti; avendo poi, ipoteticamente, un corpus più ricco di testi e articoli, ad esempio per spiegare sezioni dell'opera e fare approfondimenti tematici, si potrebbe fare un'analisi di frequenza delle parole e  cercare di ottimizzare il sito in ottica SEO.</p>
+
+
+<h1>Bibliografia e sitografia</h1>
+
+<h2>-Web project plan</h2>
+  <p> 
+    <ul>
+   <li>Lezioni e slides del corso di Informatica Umanistica di F. Tomasi a.a. 2024-2025;</li> 
+   <li>F. Tomasi, Metodologie informatiche e discipline umanistiche, Carocci, Roma 2008;</li>
+ </ul>
+  </p>
+
+  <h2>-Codice</h2>
+  <p> 
+    <ul>
+   <li>Slides del laboratorio del corso di Informatica Umanistica a cura di M. Dello Buono a.a. 2023-2024;</li> 
+   <li>Lezioni e slides del corso di Informatica Umanistica di F. Tomasi a.a. 2024-2025;</li>
+   <li>W3schools;</li>
+ </ul>
+  </p>
+
+<h2>-Software, applicazioni e strumenti</h2>
+  <p> 
+    <ul>
+   <li>W3.CSS;</li> 
+   <li>Sublime Text;</li>
+   <li>Balsamiq;</li>
+   <li>Canva;</li>
+   <li> <a href="https://app.diagrams.net/">Draw.io;</a>
+   </li>
+ </ul>
+  </p>
+
+<h2>-Immagini</h2>
+  <p> 
+    <ul>
+   <li>Google immagini;</li> 
+   <li>Wikipedia;</li>
+ </ul>
+  </p>
+
+  <h2>-Contenuti, ispirazione e varie</h2>
+  <p> 
+    <ul>
+   <li> 
+    <a href="https://actes-sud.fr/">Actes Sud;</a>
+   </li> 
+   <li>
+     <a href="https://incendies-theatre.jimdofree.com/">Enquête sur Incendies;</a>
+   </li>
+   <li>
+     <a href="https://www.wajdimouawad.fr/">Sito di Wajdi Mouawad</a>
+   </li>
+   <li>Minecraft Wiki;</li> 
+   <li>Amazon;</li>
+   <li>Feltrinelli.</li>
+ </ul>
+  </p>
+
+
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <div class="w3-xlarge w3-padding-32">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+ </div>
+ <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+ <hr class="hr-white">
+      <ul id="menu">
+        <li class="footer"><a href="#" title="Creatore">Simone Mamoli</a></li>
+          <li class="footer"><a href="#" title="Cronologia degli aggiornamenti della collezione e del sito">Ultimo aggiornamento: 15/09/2025</a></li>
+          <li class="footer"><a href="#" title="Bibliografia dei contenuti del sito">Bibliografia e sitografia</a></li>
+          <li class="footer"><a href="webprojectplan.html" title="Web Project Plan del sito">Web Project Plan   </a></li>
+          <li class="footer"><a href="#" title="Licenze dei contenuti">Copyright (CC)</a></li>
+        </ul>  
+
+</footer>
+
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+</body>
+</html>

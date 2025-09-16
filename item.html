@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<title>Item</title>
+
+<!--metadati Dublin Core-->
+    <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"/>
+    <META NAME="DC.Title" CONTENT="Incendies Wiki"/>
+    <META NAME="DC.Creator" CONTENT="Simone Mamoli"/>
+    <META NAME="DC.Subject" CONTENT="Incendies"/>
+    <META NAME="DC.Description" CONTENT="Collezione di oggetti digitali riguardanti l'opera Incendies di Wajdi Mouawad"/>
+    <META NAME="DC.Publisher" CONTENT="GitHub"/>
+    <META NAME="DC.Date" CONTENT="2025/09/15"/>
+    <META NAME="DC.Type" CONTENT="Catalogo web"/>
+    <META NAME="DC.Format" CONTENT="Risorsa digitale"/>
+    <META NAME="DC.Language" CONTENT="it"/>
+    <META NAME="DC.Rights" CONTENT="Creative Commons"/>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="shortcut icon" href="favicon/favicon.ico"/>
+
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+
+ul#menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+  justify-content: space-evenly;
+  display: flex;
+}
+
+li.footer {
+  display:inline;
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+  justify-content: space-evenly;
+}
+
+li.footer :hover {
+  background-color: #111111;
+}
+
+/* Style the list */
+ul.breadcrumb {
+  padding: 10px 16px;
+  list-style: none;
+  background-color: #eee;
+  margin-top: 50px;
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+  color: #f44336;
+  text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+.search-container {
+  float: right;
+}
+
+/* Style the input field inside the navbar */
+ input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 16px;
+  border: none;
+}
+
+/* Style the button inside the input container */
+.search-container button {
+  float: right;
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #ddd;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background: #ccc;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: right;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+table {
+  font-family: font-family: "Lato", sans-serif;
+  font-size: 18px;
+  border-collapse: collapse;
+  float: left;
+  margin-left: 50px;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+</style>
+
+
+<body>
+
+<div style="position: top; text-align: center; background-color: lightgrey;">
+    <img src="immagini/header5.jpg" style="width: 90%; height: 300px;">
+  </div>	
+
+<!-- Navbar -->
+<div class="w3-top" style="position: sticky; top: 0;" >
+  <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Home</a>
+    <a href="catalogo.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Catalogo completo</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Teatro</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Cinema</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Editoria</a>
+
+    <div class="search-container">
+    <form action="#">
+      <input type="text" placeholder="Cerca per parole chiave" name="search">
+      <button type="submit">Vai</button>
+    </form> 
+    </div>
+  </div>
+</div>
+
+
+<ul class="breadcrumb">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="catalogo.html">Catalogo</a></li>
+  <li>Seconda edizione francese</li>
+</ul>
+
+
+<div style="margin-top: 50px;">
+	<table>
+  <tr>
+    <th>Metadati</th>
+  </tr>
+  <tr>
+    <td>Titolo</td>
+    <td>Incendies</td>
+  </tr>
+  <tr>
+    <td>Autore</td>
+    <td>Wajdi Mouawad</td>
+  </tr>
+  <tr>
+    <td>Data di pubblicazione</td>
+    <td>1 gennaio 2011</td>
+  </tr>
+  <tr>
+    <td>Lingua</td>
+    <td>Francese</td>
+  </tr>
+  <tr>
+    <td>Genere</td>
+    <td>Teatro</td>
+  </tr>
+  <tr>
+    <td>Editore</td>
+    <td>Actes Sud</td>
+  </tr>
+  <tr>
+    <td>Collana</td>
+    <td>Babel</td>
+  </tr>
+  <tr>
+    <td>Lunghezza stampa</td>
+    <td>169 pagine</td>
+  </tr>
+  <tr>
+    <td>Codice identificativo (ISBN-13)</td>
+    <td>978-2742793129</td>
+  </tr>
+  <tr>
+    <td>Edizione precedente</td>
+    <td>Actes Sud, 2003</td>
+  </tr>
+  <tr>
+    <td>Illustratore della copertina</td>
+    <td>Lino, 2003</td>
+  </tr>
+  <tr>
+    <td>Dimensioni</td>
+    <td>11 x 1.1 x 17.6 cm</td>
+  </tr>
+</table>
+<img src="immagini/retro.jpg" alt="cover libro" style="height: 600px; border:10px solid; float: right; margin-right: 50px;">
+<img src="immagini/libro2.jpg" alt="cover libro" style="height: 600px; border:10px solid; float: right;">
+</div>
+
+<div style="clear: both;"></div>
+
+<div style="background-color: lightgrey; margin-top: 50px; padding: 10px;">
+	<h1>Descrizione:</h1>
+	<p style="font-size: 18px;">Questa seconda edizione presenta lievi differenze di stile lungo tutto il testo e il taglio di un paio di pagine corrispondenti all'ultimo capitolo nell'edizione originale, ma la trama rimane sostanzialmente invariata.
+
+	La quarta di copertina recita (tradotto): "Quando il notaio Lebel legge ai gemelli Jeanne e Simon Marwan il testamento della loro madre Nawal, risveglia in loro l'incerta storia della loro nascita: chi era il loro padre e quale odissea li ha portati a nascere lontano dal paese d'origine della madre? Consegnando a ciascuno una busta, una destinata al padre che credevano morto e l'altra al fratello di cui ignoravano l'esistenza, il notaio smuove i continenti del loro dolore: nel libro della vita di questa famiglia li attendono drammi insospettabili, che portano i colori dell'irreparabile. Ma il prezzo da pagare per placare l'anima tormentata di Nawal rischia di divorare i destini di Jeanne e Simon".</p>
+</div>
+
+<div style="text-align: center; margin-top: 50px;">
+	<h2>Localizzati e scopri dove prendere in prestito o acquistare il libro vicino a te</h2>
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2846.237267877808!2d11.349112700000001!3d44.489804899999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477fd49f3092faad%3A0x931c3b7e673e76fe!2sBiblioteca%20del%20Dipartimento%20di%20Lingue%20e%20Letterature%20Straniere%20Moderne%20dell&#39;Universit%C3%A0%20degli%20Studi%20di%20Bologna!5e0!3m2!1sen!2sit!4v1757842311130!5m2!1sen!2sit" width="1000" height="550" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <div class="w3-xlarge w3-padding-32">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+ </div>
+ <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+ <hr class="hr-white">
+      <ul id="menu">
+        <li class="footer"><a href="#" title="Creatore">Simone Mamoli</a></li>
+          <li class="footer"><a href="#" title="Cronologia degli aggiornamenti della collezione e del sito">Ultimo aggiornamento: 15/09/2025</a></li>
+          <li class="footer"><a href="#" title="Bibliografia dei contenuti del sito">Bibliografia e sitografia</a></li>
+          <li class="footer"><a href="webprojectplan.html" title="Web Project Plan del sito">Web Project Plan   </a></li>
+          <li class="footer"><a href="#" title="Licenze dei contenuti">Copyright (CC)</a></li>
+        </ul>  
+
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+</body>
+</html>
